@@ -57,14 +57,19 @@ do {
 } while (isNaN(difficolta) || difficolta < 0 || difficolta > 2);
 
 // 3. Applico la funzione nNumeri random all'array della cpu
+var max = 0;
+
 if (difficolta == 0) {
   var numeriRandomComputer = generatoreNumeri(1, 100, 16);
+  max = 100;
   console.log("la difficoltà scelta è 0 => numeri tra 1 e 100");
 } else if (difficolta == 1) {
   var numeriRandomComputer = generatoreNumeri(1, 80, 16);
+  max = 80;
   console.log("la difficoltà scelta è 0 => numeri tra 1 e 80");
 } else {
   var numeriRandomComputer = generatoreNumeri(1, 50, 16);
+  max = 50;
   console.log("la difficoltà scelta è 0 => numeri tra 1 e 50");
 }
 
@@ -100,7 +105,7 @@ do {
   scelteUtente.push(numeriSceltiUtente);
   console.log(scelteUtente);
   j++;
-} while ( (j <= 84) && (uguali == false) );
+} while ( (j <= (max - 16) ) && (uguali == false) );
 
 // console.log(scelteUtente);
 
