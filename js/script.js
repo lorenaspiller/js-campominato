@@ -138,13 +138,17 @@ while ( (scelteUtente.length < (maxBombe - 16) ) && (uguali == false) ) {
       x++;
     } while ( (isNaN(numeriSceltiUtente)) || (trovaInArray(scelteUtente, numeriSceltiUtente)) || (numeriSceltiUtente > maxBombe) || (numeriSceltiUtente < 1) );
 
+    scelteUtente.push(numeriSceltiUtente);
+
   // 7. Controllo se il numero inserito dall'utente è anche nell'array dei numeri generati per la cpu
   } else if (trovaInArray(numeriRandomComputer, numeriSceltiUtente)) {
     uguali = true;
+  } else {
+    // 8. eseguo il push nell'array dei numeri scelti dall'utente (e quindi validi)
+    scelteUtente.push(numeriSceltiUtente);
   }
 
-  // 8. eseguo il push nell'array dei numeri scelti dall'utente (e quindi validi)
-  scelteUtente.push(numeriSceltiUtente);
+
 
 
   // //SECONDO METODO PER LO SVOLGIMENTO DEL PROGRAMMA E PER I CONTROLLI
